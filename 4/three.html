@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遍历对象</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div v-for="(item, key, index) of userInfo"
+                :key="item.id">
+                {{item}} --- {{key}} --- {{index}}
+            </div>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: "#root",
+            data: {
+                // 想更新对象可以通过重新引用方式
+                // 在console中通过: Vue.set(vm.userInfo, "adress", "beijing")
+                // 在console中通过: vm.$set(vm.userInfo, "adress", "beijing")
+                userInfo: {
+                    name: "Niko",
+                    age: 27,
+                    gender: "male",
+                    salary: "50k"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

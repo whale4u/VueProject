@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性绑定和双向绑定</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- 属性绑定和双向绑定 -->
+    <div id="root">
+        <!-- <div title="This is hello world!">Hello World!</div> -->
+        <!-- <div v-bind:title="'Web say: ' + title">Hello World!</div> -->
+        <!-- 另一种写法 -->
+        <div :title="'Web say: ' + title">Hello World!</div>
+        <!-- 双向绑定 -->
+        <input v-model="content" />
+        <textarea v-model="content"></textarea>
+        <input v-model="content" type="radio" value="test" />
+        <select v-model="content">
+            <option disabled>--请选择--</option>
+            <option value="1">a</option>
+            <option value="2">b</option>
+            <option value="3">c</option>
+        </select>
+        <div>{{content}}</div>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#root",
+            data: {
+                title: "This is hello world!",
+                content: "请输入内容"
+            }
+        })
+    </script>
+</body>
+</html>

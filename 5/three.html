@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <!-- 通过对象、数组绑定 -->
+        <!-- <div :style="styleObj" @click="handleDivClick"> -->
+        <div :style="[styleObj, {fontSize: '90px'}]" @click="handleDivClick">
+            Hello World
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#root",
+            data: {
+                styleObj: {
+                    color: "black"
+                }
+            },
+            methods: {
+                handleDivClick: function () {
+                    this.styleObj.color = this.styleObj.color === "black" ? "red" : "black";
+                }
+            }
+        })
+    </script>
+</body>
+</html>

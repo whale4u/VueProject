@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>样式绑定</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .activated {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <div @click="handleDivClick"
+            :class="{activated: isActivated}"
+            >
+            Hello World
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#root",
+            data: {
+                isActivated: false
+            },
+            methods: {
+                handleDivClick: function () {
+                    this.isActivated = !this.isActivated
+                }
+            }
+        })
+    </script>
+</body>
+</html>

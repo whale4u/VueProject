@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性和侦听器</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        姓：<input v-model="firstName" />
+        名：<input v-model="lastName" />
+        <div>{{fullName}}</div>
+        <div>{{count}}</div>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#root",
+            data: {
+                firstName: "",
+                lastName: "",
+                count: 0
+            },
+            // 计算属性
+            computed: {
+                fullName: function() {
+                    return this.firstName + " " + this.lastName;
+                }
+            },
+            // 监听器
+            watch: {
+                // firstName: function() {
+                //     this.count ++
+                // },
+                // lastName: function() {
+                //     this.count ++
+                // }
+                // 另一种写法
+                fullName: function() {
+                    this.count ++
+                }
+            }
+        })
+    </script>
+</body>
+</html>
