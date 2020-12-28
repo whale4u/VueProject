@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <div>v-bind绑定示例</div>
+    <img v-bind:src="imageSrc">
+
+    <div>v-bind缩写:绑定示例</div>
+    <img :src="imageSrc">
+</div>
+
+<script>
+    new Vue({
+        el: "#root",
+        data: {
+            imageSrc: "https://pic.rmb.bdstatic.com/8b00c0466aae9a7b3ca16ecc8f515391.jpeg"
+        }
+    })
+</script>
+</body>
+</html>
