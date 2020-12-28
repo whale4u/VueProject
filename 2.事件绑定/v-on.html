@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <div>v-on示例</div>
+    <button v-on:click="handleClick()">{{message}}</button>
+    <div>v-on缩写@示例</div>
+    <button @click="handleClick()">{{message}}</button>
+    <div>不传参数函数名()可省略</div>
+    <button @click="handleClick">{{message}}</button>
+    <div>参数传递示例</div>
+    <button @click="newHandleClick(1, 2, 3)">{{message}}</button>
+</div>
+
+<script>
+    new Vue({
+        el: "#root",
+        data: {
+            message: "点击打开"
+        },
+        methods: {
+            handleClick () {
+                this.message = "我被点击了"
+            },
+            newHandleClick (a, b, c) {
+                alert(a+b+c)
+            }
+
+        }
+    })
+</script>
+</body>
+</html>

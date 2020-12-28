@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双向绑定</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="root">
+    任意输入什么吧：<input v-model="content"/>
+    <br />
+    这是输入的文本：<div>{{content}}</div>
+</div>
+
+<script>
+    new Vue({
+        el: "#root",
+        data: {
+            content: ""
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div>文本插值{{}}示例：</div>
+        <div>{{content}}</div>
+        <div>v-html示例：</div>
+        <div v-html="content"></div>
+        <div>v-text示例：</div>
+        <div v-text="content"></div>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#root",
+            data: {
+                content: "<img src='1'>"
+            }
+        })
+    </script>
+</body>
+</html>
