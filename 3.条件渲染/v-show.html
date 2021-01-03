@@ -15,29 +15,6 @@
         <!-- <div v-if="show">Hello World!</div> -->
         <div v-show="show">Hello World!</div>
         <button @click="handleClick">toggle</button>
-        <ul>
-            <!-- 加key参数提高性能 -->
-            <!-- <li v-for="item of list" :key="item">{{item}}</li> -->
-            <!-- <li v-for="(item, index) of list" :key="index">
-                {{item}}---{{index}}
-            </li>
-
-            <div v-for="(item, index) of arr"
-                :key="item.id">
-                {{item.text}} -- {{index}}
-            </div> -->
-
-            <!-- 占位符template，不会渲染到dom中 -->
-            <template v-for="(item, index) of arr"
-            :key="item.id">
-                <div>
-                    {{item.text}} -- {{index}}
-                </div>
-                <span>
-                    {{item.text}}
-                </span>
-            </template>
-        </ul>
     </div>
 
     <script>
