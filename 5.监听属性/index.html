@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getter和setter</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <p>计数器: {{ counter }}</p>
+        <button @click = "counter++" >点我</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#root',
+            data: {
+                counter: 1
+            }
+        });
+        vm.$watch('counter', function(nval, oval) {
+            console.log('计数器值的变化 :' + oval + ' 变为 ' + nval + '!');
+        });
+    </script>
+</body>
+</html>

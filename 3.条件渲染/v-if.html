@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>条件渲染</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        任意输入字母吧：<input v-model="number"/>
+        <br />
+        <div v-if="number > 1">
+            A
+          </div>
+          <div v-else-if="number === 'B'">
+            B
+          </div>
+          <div v-else-if="number === 'C'">
+            C
+          </div>
+          <div v-else>
+            Not A/B/C
+        </div>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: "#root",
+            data: {
+                number: ""
+            }
+        })
+    </script>
+</body>
+</html>
