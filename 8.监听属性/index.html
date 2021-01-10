@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>getter和setter</title>
+    <title>监听属性</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
@@ -15,11 +15,17 @@
             el: '#root',
             data: {
                 counter: 1
+            },
+            watch: {
+                counter: function (newValue, oldValue) {
+                    console.log('计数器值的变化 :' + oldValue + ' 变为 ' + newValue + '!');
+                }
             }
         });
-        vm.$watch('counter', function(nval, oval) {
-            console.log('计数器值的变化 :' + oval + ' 变为 ' + nval + '!');
-        });
+        // 另一种写法！
+        // vm.$watch('counter', function(nval, oval) {
+        //     console.log('计数器值的变化 :' + oval + ' 变为 ' + nval + '!');
+        // });
     </script>
 </body>
 </html>

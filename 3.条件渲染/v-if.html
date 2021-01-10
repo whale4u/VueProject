@@ -9,17 +9,10 @@
     <div id="root">
         任意输入字母吧：<input v-model="number"/>
         <br />
-        <div v-if="number > 1">
-            A
-          </div>
-          <div v-else-if="number === 'B'">
-            B
-          </div>
-          <div v-else-if="number === 'C'">
-            C
-          </div>
-          <div v-else>
-            Not A/B/C
+        <div v-if="number === 'A'">A</div>
+          <div v-else-if="number === 'B'">B</div>
+          <div v-else-if="number === 'C'">C</div>
+          <div v-else>Not A/B/C</div>
         </div>
     </div>
 

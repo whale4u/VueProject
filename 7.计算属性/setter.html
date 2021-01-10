@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性setter</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        姓：<input v-model="firstName" />
+        <br />
+        名：<input v-model="lastName" />
+        <p>全名: {{ fullName }}</p>
+    </div>
+    <script>
+        var vm = new Vue({
+        el: '#root',
+        data: {
+            firstName: '',
+            lastName: ''
+        },
+        computed: {
+            // 计算属性的 getter
+            fullName: {
+                get: function() {
+                    return this.firstName + ' ' + this.lastName
+                },
+                set: function(newValue) {
+                    var names = newValue.split(' ')
+                    this.firstName = names[0]
+                    this.lastName = names[names.length - 1]
+                }
+            }
+
+        }
+        })
+    </script>
+</body>
+</html>
