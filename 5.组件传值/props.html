@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>getter和setter</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            //使用子组件
+            <todo-item v-for="item in groceryList"
+            v-bind:todo="item"
+            v-bind:todo2="item.id"
+            v-bind:key="item.id"></todo-item>
+        </div>
+        
+        <script>
+            Vue.component('todo-item', {
+                //子组件接受的传值
+                props: ['todo', 'todo2'],
+                //子组件模板
+                template: '<li>{{ todo.text }} {{ todo2}}</li>'
+            })
+
+            var vm = new Vue({
+            el: '#root',
+            data: {
+                groceryList: [
+                { id: 0, text: '蔬菜' },
+                { id: 1, text: '奶酪' },
+                { id: 2, text: '随便其它什么人吃的东西' }
+                ]
+            }
+            })
+        </script>
+    </body>
+</html>
