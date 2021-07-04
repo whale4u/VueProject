@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>数组渲染列表</title>
+    </head>
+    <body>
+        <div>数组渲染列表</div>
+        <script>
+            var array = ['A', 'B', 'C', 'D'];
+            for (i=0; i<array.length; i++) {
+                var newDiv = document.createElement("DIV");
+                // console.log(array[i]);
+                var txt = document.createTextNode(array[i]);
+                newDiv.appendChild(txt);
+                document.body.appendChild(newDiv);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>js实现</title>
+    </head>
+    <body>
+        输入任意字母：<input id="myInput" onchange="handleChange()"/>
+        <div id="myDiv"></div>
+        <script>
+            function handleChange() {
+                var letter = document.getElementById("myInput").value;
+                // alert(letter);
+                var text = document.getElementById("myDiv");
+                if (letter == 'A') {
+                    text.innerText = "A";
+                } else if (letter == 'B') {
+                    text.innerText = 'B';
+                } else if (letter == 'C') {
+                    text.innerText = 'C';
+                } else  {
+                    text.innerText = "NOT A/B/C";
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>遍历对象</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
@@ -9,7 +7,7 @@
     <div id="root">
         <div v-for="(item, key, index) in userInfo"
                 :key="item.id">
-                {{item}} --- {{key}} --- {{index}}
+                {{index}} --- {{key}} --- {{item}}
             </div>
     </div>
 

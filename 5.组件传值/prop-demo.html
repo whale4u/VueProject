@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <title>prop demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <blog-post title="go home"></blog-post>
+        <blog-post title="go to school"></blog-post>
+        <blog-post title="go to supermarket"></blog-post>
+    </div>
+    <script>
+        Vue.component('blog-post', {
+            props: ['title'],
+            template: '<h3>{{ title }}</h3>'
+        })
+
+        var vm = new Vue({
+            el: '#root'
+        })
+    </script>
+</body>
+</html>

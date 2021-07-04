@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> $emit demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="root">
+  <!-- 属性绑定 v-model缩写:       -->
+  <div :style="{ fontSize: postFontSize + 'em' }">
+    <blog-post v-on:enlarge-text="postFontSize += $event"
+               title="Hello Vue.js!">
+    </blog-post>
+  </div>
+</div>
+
+<script>
+  Vue.component('blog-post', {
+    props: ['title'],
+    template: `<div class="blog-post">
+            <h3>{{ title }}</h3>
+            <button @click="$emit('enlarge-text', 0.1)">
+              Enlarge text
+            </button>
+            </div>`
+  })
+
+  var vm = new Vue({
+    el: '#root',
+    data: {
+      postFontSize: 1
+    }
+  })
+</script>
+</body>
+</html>

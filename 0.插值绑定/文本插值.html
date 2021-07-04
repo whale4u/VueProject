@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title>Hello World</title>
+    <!-- 引入vue库 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <!-- <div>{{msg}}</div> -->
+        <div v-html="msg"></div>
+    </div>
+
+    <script>
+        // 新建vue实例
+        new Vue({
+            // 挂载点
+            el: "#root",
+            data: {
+                msg: "Hello World!",
+                number: 123
+            }
+        })
+    </script>
+</body>
+</html>

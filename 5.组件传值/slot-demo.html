@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+  <title>slot demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <alert-box>
+      Something bad happened.
+    </alert-box>
+</div>
+<script>
+  Vue.component('alert-box', {
+    template: `
+        <div class="demo-alert-box">
+            <strong>Error!</strong>
+            <slot></slot>
+        </div>
+        `
+  })
+
+  var vm = new Vue({
+    el: '#root'
+  })
+</script>
+</body>
+</html>
